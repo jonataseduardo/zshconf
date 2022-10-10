@@ -2,7 +2,17 @@
 
 # Instructions 
 
-Install zsh
+
+### Install NerdFonts
+```bash
+git clone https://github.com/ryanoasis/nerd-fonts.git
+cd nerd-fonts
+./install.sh
+
+```
+
+
+### Install zsh
 ```bash
 sudo apt-get install zsh
 ```
@@ -13,6 +23,7 @@ Install Oh-My-Zsh
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
+
 
 ### PowerLevel10k
 
