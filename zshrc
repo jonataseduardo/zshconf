@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -136,19 +136,21 @@ if [ -f '/home/jonatas/pkgs/google-cloud-sdk/path.zsh.inc' ]; then . '/home/jona
 if [ -f '/home/jonatas/pkgs/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/jonatas/pkgs/google-cloud-sdk/completion.zsh.inc'; fi
 
 #GCP Service account key
-export GOOGLE_APPLICATION_CREDENTIALS=/home/jonatas/.k/telefonica-digitalsales-0bf3b04423f1.json
+#export GOOGLE_APPLICATION_CREDENTIALS=/home/jonatas/.k/telefonica-digitalsales-0bf3b04423f1.json
 
 # Colorls 
 # Enable tab completion of flags
-source $(dirname $(gem which colorls))/tab_complete.sh
+if [ -x "$(command -v colorls)" ]; then
+	source $(dirname $(gem which colorls))/tab_complete.sh
 
-# Move standard ls
-alias ls="colorls -t --git-status"
-# Base formats
-alias la="colorls -A"           # short, multi-line
-alias ll="colorls -lA"          # list, 1 per line
-# [d] Sort output with directories first
-alias lsd="ls --sort-dirs"
-alias lld="ll --sort-dirs"
-alias ldd="ld --sort-dirs"
-alias lad="la --sort-dirs"
+	# Move standard ls
+	alias ls="colorls -t --git-status"
+	# Base formats
+	alias la="colorls -A"           # short, multi-line
+	alias ll="colorls -lA"          # list, 1 per line
+	# [d] Sort output with directories first
+	alias lsd="ls --sort-dirs"
+	alias lld="ll --sort-dirs"
+	alias ldd="ld --sort-dirs"
+	alias lad="la --sort-dirs"
+fi
