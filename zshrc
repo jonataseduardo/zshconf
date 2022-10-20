@@ -114,7 +114,7 @@ eval "$(pyenv init -)"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # pnpm
-export PNPM_HOME="/home/jonatas/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
@@ -130,13 +130,13 @@ function nvimvenv {
 alias nvim=nvimvenv
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/jonatas/pkgs/google-cloud-sdk/path.zsh.inc' ]; then . '/home/jonatas/pkgs/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f $HOME'/pkgs/google-cloud-sdk/path.zsh.inc' ]; then source $HOME'/pkgs/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/jonatas/pkgs/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/jonatas/pkgs/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f $HOME'/pkgs/google-cloud-sdk/completion.zsh.inc' ]; then source $HOME'/pkgs/google-cloud-sdk/completion.zsh.inc'; fi
 
 #GCP Service account key
-#export GOOGLE_APPLICATION_CREDENTIALS=/home/jonatas/.k/telefonica-digitalsales-0bf3b04423f1.json
+if [ -f $HOME'/pkgs/google-cloud-sdk/completion.zsh.inc' ]; then export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.k/vivo-gcp.json; fi
 
 # Colorls 
 # Enable tab completion of flags
