@@ -74,10 +74,28 @@ A Ruby script that colorizes the ls output with color and icons
 sudo apt install ruby-full
 sudo gem install colorls
 ```
+
+## Install gcloud 
+### Installation guide for the sdk 
+Link to installation using .deb
+[https://cloud.google.com/sdk/docs/install#deb]
+
+### Instalation guide for terminal autocomplete 
+
+Download the installer just to get the autocomplete files
+
+```bash
+mkdir $HOME/pkgs
+cd $HOME/pkgs
+wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-406.0.0-linux-x86_64.tar.gz
+tar -xvf google-cloud-cli-406.0.0-linux-x86_64.tar.gz
+```
+
+
  
 
 ## REFERENCES
-[]dev.to /abdfnx/oh-my-zsh-powerlevel10k-cool-terminal-1no0
+[1](dev.to /abdfnx/oh-my-zsh-powerlevel10k-cool-terminal-1no0)
 
 
 
