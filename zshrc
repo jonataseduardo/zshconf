@@ -135,8 +135,8 @@ if [ -f $HOME'/pkgs/google-cloud-sdk/path.zsh.inc' ]; then source $HOME'/pkgs/go
 # The next line enables shell command completion for gcloud.
 if [ -f $HOME'/pkgs/google-cloud-sdk/completion.zsh.inc' ]; then source $HOME'/pkgs/google-cloud-sdk/completion.zsh.inc'; fi
 
-#GCP Service account key
-if [ -f $HOME'/pkgs/google-cloud-sdk/completion.zsh.inc' ]; then export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.k/vivo-gcp.json; fi
+# GCP sak 
+if [ -f $HOME'/.k/vivo-gcp.json' ]; then export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.k/vivo-gcp.json; fi
 
 # Colorls 
 # Enable tab completion of flags
