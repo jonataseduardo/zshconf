@@ -104,7 +104,9 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zconf="$EDITOR ~/.zshrc"
+alias zconf="$EDITOR ~/c/zshconf/zshrc"
+alias nconf="$EDITOR ~/c/nvim-basic-ide/init.lua"
+alias tconf="$EDITOR ~/c/tmux-conf/tmux.conf"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
@@ -117,7 +119,7 @@ eval "$(pyenv init -)"
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+export PATH="$PNPM_HOME:$HOME/.cargo/bin:$PATH"
 # pnpm end
 
 function nvimvenv {
@@ -156,3 +158,10 @@ if [ -x "$(command -v colorls)" ]; then
 	alias ldd="ld --sort-dirs"
 	alias lad="la --sort-dirs"
 fi
+
+export TERMINAL=gnome-terminal
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+
