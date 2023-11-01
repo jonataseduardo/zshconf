@@ -142,6 +142,9 @@ if [ -f $HOME'/pkgs/google-cloud-sdk/completion.zsh.inc' ]; then source $HOME'/p
 # GCP sak 
 if [ -f $HOME'/.k/vivo-gcp.json' ]; then export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.k/vivo-gcp.json; fi
 
+# Openai key to nvim chatgpt
+if [ -f $HOME'/.k/openai_api_key.dat' ]; then export OPENAI_API_KEY=$(tail -1 $HOME/.k/openai_api_key.dat); fi
+
 # Colorls 
 # Enable tab completion of flags
 if [ -x "$(command -v colorls)" ]; then
@@ -164,4 +167,5 @@ export TERMINAL=gnome-terminal
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
+
 
