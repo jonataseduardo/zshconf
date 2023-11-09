@@ -145,10 +145,18 @@ if [ -f $HOME'/.k/openai_api_key.dat' ]; then export OPENAI_API_KEY=$(tail -1 $H
 # Colorls 
 # Enable tab completion of flags
 if [ -x "$(command -v lsd)" ]; then
-  alias l='ls -l'
-  alias la='ls -a'
-  alias lla='ls -la'
-  alias lt='ls --tree'i
+	source $(dirname $(gem which colorls))/tab_complete.sh
+
+	# Move standard ls
+	alias ls="colorls -t --git-status"
+	# Base formats
+	alias la="colorls -A"           # short, multi-line
+	alias ll="colorls -lA"          # list, 1 per line
+	# [d] Sort output with directories first
+	alias lsd="ls --sort-dirs"
+	alias lld="ll --sort-dirs"
+	alias ldd="ld --sort-dirs"
+	alias lad="la --sort-dirs"
 fi
 
 export TERMINAL=gnome-terminal
