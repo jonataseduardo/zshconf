@@ -109,18 +109,18 @@ alias nconf="$EDITOR ~/c/nvim-basic-ide/init.lua"
 alias tconf="$EDITOR ~/c/tmux-conf/tmux.conf"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$HOME/.cargo/bin:$HOME/.local/share/bin:$PATH"
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+export PATH=$PATH:/usr/local/go/bin
+
+#export PYENV_ROOT="$HOME/.pyenv"
+#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
-export PATH="$PNPM_HOME:$HOME/.cargo/bin:$PATH"
-# pnpm end
 
 function nvimvenv {
   if [[ -e "$VIRTUAL_ENV" && -f "$VIRTUAL_ENV/bin/activate" ]]; then
@@ -144,19 +144,12 @@ if [ -f $HOME'/.k/openai_api_key.dat' ]; then export OPENAI_API_KEY=$(tail -1 $H
 
 # Colorls 
 # Enable tab completion of flags
-if [ -x "$(command -v lsd)" ]; then
-	source $(dirname $(gem which colorls))/tab_complete.sh
-
-	# Move standard ls
-	alias ls="colorls -t --git-status"
-	# Base formats
-	alias la="colorls -A"           # short, multi-line
-	alias ll="colorls -lA"          # list, 1 per line
-	# [d] Sort output with directories first
-	alias lsd="ls --sort-dirs"
-	alias lld="ll --sort-dirs"
-	alias ldd="ld --sort-dirs"
-	alias lad="la --sort-dirs"
+if [ -x "$(command -v colorls)" ]; then
+  alias ls='lsd'
+  alias l='ls -lrt'
+  alias la='ls -art'
+  alias lla='ls -la'
+  alias lt='ls --tree'
 fi
 
 export TERMINAL=gnome-terminal
@@ -166,3 +159,17 @@ zstyle ':completion:*' menu select
 fpath+=~/.zfunc
 
 
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
+
+# some nice alias 
+alias k="kubectl"
+
+alias gc="git checkout"
+
+alias c="clear"
+
+alias python=python3
