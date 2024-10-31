@@ -173,3 +173,6 @@ alias gc="git checkout"
 alias c="clear"
 
 alias python=python3
+
+alias db="docker compose build "
+alias dup="docker compose up"
