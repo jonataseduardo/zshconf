@@ -123,6 +123,9 @@ if [ -x $(command -v lsd) ]; then
   alias lt='ls --tree'
 fi
 
-alias clear=c
+[[ -f $HOME/.k/openai_api_key.dat ]] && export OPENAI_API_KEY=$(tail -1 $HOME/.k/openai_api_key.dat)
+[[ -f $HOME/.k/claude_api_key.dat ]] && export CLAUDE_API_KEY=$(tail -1 $HOME/.k/claude_api_key.dat)
+
+alias c=clear
 
 #export FZF_BASE=/Users/jonatas.cesar/homebrew/bin/fzf
