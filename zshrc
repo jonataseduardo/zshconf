@@ -124,7 +124,7 @@ if [ -x $(command -v lsd) ]; then
 fi
 
 [[ -f $HOME/.k/openai_api_key.dat ]] && export OPENAI_API_KEY=$(tail -1 $HOME/.k/openai_api_key.dat)
-[[ -f $HOME/.k/claude_api_key.dat ]] && export CLAUDE_API_KEY=$(tail -1 $HOME/.k/claude_api_key.dat)
+[[ -f $HOME/.k/claude_api_key.dat ]] && export ANTHROPIC_API_KEY=$(tail -1 $HOME/.k/claude_api_key.dat)
 
 alias c=clear
 
