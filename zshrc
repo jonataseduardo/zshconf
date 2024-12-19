@@ -109,11 +109,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+[[ $(uname) == "Darwin" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-[[ $(uname) == "Darwin" ]] && eval "$($HOME/homebrew/bin/brew shellenv)"
 
 if [ -x $(command -v lsd) ]; then
   alias ls='lsd'
@@ -127,5 +127,3 @@ fi
 [[ -f $HOME/.k/claude_api_key.dat ]] && export ANTHROPIC_API_KEY=$(tail -1 $HOME/.k/claude_api_key.dat)
 
 alias c=clear
-
-#export FZF_BASE=/Users/jonatas.cesar/homebrew/bin/fzf
