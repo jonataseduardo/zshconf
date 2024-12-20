@@ -88,12 +88,12 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
+#Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
@@ -123,7 +123,31 @@ if [ -x $(command -v lsd) ]; then
   alias lt='ls --tree'
 fi
 
+alias zconf='cd $HOME/c/zshconf/ && $EDITOR zshrc'
+alias tconf='cd $HOME/c/tmux-conf/ && $EDITOR tmux.conf'
+alias nconf='cd $HOME/c/kickstart-modular.nvim/ && $EDITOR init.lua'
+alias c=clear
+
+# On mac use gnu sed, and awk
+[[ -x $(command -v gsed) ]] && alias sed=gsed
+[[ -x $(command -v gawk) ]] && alias awk=gawk
+
 [[ -f $HOME/.k/openai_api_key.dat ]] && export OPENAI_API_KEY=$(tail -1 $HOME/.k/openai_api_key.dat)
 [[ -f $HOME/.k/claude_api_key.dat ]] && export ANTHROPIC_API_KEY=$(tail -1 $HOME/.k/claude_api_key.dat)
 
-alias c=clear
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
