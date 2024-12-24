@@ -126,6 +126,8 @@ fi
 alias zconf='cd $HOME/c/zshconf/ && $EDITOR zshrc'
 alias tconf='cd $HOME/c/tmux-conf/ && $EDITOR tmux.conf'
 alias nconf='cd $HOME/c/kickstart-modular.nvim/ && $EDITOR init.lua'
+
+alias ipython="python -m IPython --no-autoindent"
 alias c=clear
 
 # On mac use gnu sed, and awk
@@ -137,3 +139,4 @@ alias c=clear
 
 zshconf_dir=$(dirname "$(readlink -f "$HOME/.zshrc")")
 source $zshconf_dir/zcustom.sh
+
