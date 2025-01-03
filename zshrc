@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git )
+plugins=(git fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -120,7 +120,7 @@ if [ -x $(command -v lsd) ]; then
   alias l='ls -lrt'
   alias la='ls -art'
   alias lla='ls -la'
-  alias lt='ls --tree'
+  alias tree='ls --tree'
 fi
 
 alias zconf='cd $HOME/c/zshconf/ && $EDITOR zshrc'
