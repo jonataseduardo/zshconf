@@ -138,5 +138,5 @@ alias c=clear
 [[ -f $HOME/.k/claude_api_key.dat ]] && export ANTHROPIC_API_KEY=$(tail -1 $HOME/.k/claude_api_key.dat)
 
 zshconf_dir=$(dirname "$(readlink -f "$HOME/.zshrc")")
-source $zshconf_dir/zcustom.sh
+source $zshconf_dir/cobra.sh
 
