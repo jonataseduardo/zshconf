@@ -58,5 +58,5 @@ cobra_deactivate() {
 }
 
 cobra_update() {
-    conda env update --prefix $PWD/.conda_en --file environment-nolock.yml --prune
+    conda env update --prefix $PWD/.conda_env --file environment-nolock.yml --prune
 }
