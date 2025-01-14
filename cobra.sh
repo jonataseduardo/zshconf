@@ -57,6 +57,10 @@ cobra_deactivate() {
     unset CONDA_PROMPT_MODIFIER
 }
 
+cobra_create() {
+    conda env create --prefix $PWD/.conda_env --file environment-nolock.yml
+}
+
 cobra_update() {
     conda env update --prefix $PWD/.conda_env --file environment-nolock.yml --prune
 }
